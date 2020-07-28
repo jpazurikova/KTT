@@ -425,6 +425,13 @@ project "sort_new_opencl"
     defines { "KTT_OPENCL_EXAMPLE" }
     links { "ktt" }
 
+project "memory_map_test_opencl"
+    kind "ConsoleApp"
+    files {"examples/memory-map-test/*.h", "examples/memory-map-test/*.cpp", "examples/memory-map-test/*.cl"}
+    includedirs { "source" }
+    defines { "KTT_OPENCL_EXAMPLE" }
+    links { "ktt" }
+
 end -- opencl_projects
 
 if cuda_projects then
@@ -511,6 +518,13 @@ project "sort_cuda"
 project "sort_new_cuda"
     kind "ConsoleApp"
     files {"examples/sort-new/*.h", "examples/sort-new/*.cpp", "examples/sort-new/*.cu"}
+    includedirs { "source" }
+    defines { "KTT_CUDA_EXAMPLE" }
+    links { "ktt" }
+
+project "memory_map_test_cuda"
+    kind "ConsoleApp"
+    files {"examples/memory-map-test/*.h", "examples/memory-map-test/*.cpp", "examples/memory-map-test/*.cu"}
     includedirs { "source" }
     defines { "KTT_CUDA_EXAMPLE" }
     links { "ktt" }
